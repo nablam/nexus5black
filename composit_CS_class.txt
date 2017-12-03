@@ -1,0 +1,93 @@
+using System;
+namespace RaspiCon
+{
+   public class Tick
+    {
+        public string NAME { get; set; }
+        public Tick() { }
+        public void bite() { Console.WriteLine( NAME+" is BYTING!!!!"); }
+    }
+}
+
+using System;
+namespace RaspiCon
+{
+   public class Dog
+    {
+        public Dog() { }
+        public void Talk() {
+            Console.WriteLine("ARF ARF");
+
+            Tick t0 = new Tick() { NAME = "tikcer" };
+            t0.bite();
+        }
+    }
+}
+
+using System;
+namespace RaspiCon
+{
+    public class SimpleDude
+    {
+        private int _age;
+        private string _name;
+        public SimpleDude() { _name = "no name"; _age = 0; }
+        public SimpleDude(string str, int a) { _name = str; _age = a; }
+        public string GetName() { return _name; }
+        public int GetAge() { return _age; }
+
+        public void DoIntro() { Console.WriteLine("my name is " + _name + " and I am " + _age + " years old"); }
+    }
+}
+
+using System;
+
+namespace RaspiCon
+{
+   public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("OK togo");
+            SimpleDude d0 = new SimpleDude();
+            SimpleDude d1 = new SimpleDude("Bob", 12);
+            d0.DoIntro();
+            d1.DoIntro();
+
+            Dog dog0 = new Dog();
+            dog0.Talk();
+
+
+           // Tick t0 = new Tick() { NAME="tikcer"};
+            //t0.bite();
+        }
+    }
+}
+
+
+
+
+drwxr-xr-x 2 pi pi 4096 Nov 15 22:48 .
+drwxr-xr-x 7 pi pi 4096 Nov 15 22:27 ..
+-rw-r--r-- 1 pi pi  158 Nov 15 22:47 Dog.cs
+-rw-r--r-- 1 pi pi  390 Nov 15 22:47 Program.cs
+-rw-r--r-- 1 pi pi  476 Nov 15 22:30 SimpleDude.cs
+
+
+pi@raspberrypi:~/visualStudio $ nano Tick.cs
+pi@raspberrypi:~/visualStudio $ nano Dog.cs
+pi@raspberrypi:~/visualStudio $ nano Program.cs
+pi@raspberrypi:~/visualStudio $ mcs /target:library Tick.cs
+pi@raspberrypi:~/visualStudio $ mcs /target:library Dog.cs /reference:Tick.dll
+pi@raspberrypi:~/visualStudio $ ls
+Dog.cs  Dog.dll  Program.cs  SimpleDude.cs  Tick.cs  Tick.dll
+pi@raspberrypi:~/visualStudio $ mcs /target:library SimpleDude.cs
+pi@raspberrypi:~/visualStudio $ mcs Program.cs /reference:SimpleDude.dll /reference:Dog.dll
+pi@raspberrypi:~/visualStudio $ mono Program.exe
+OK togo
+my name is no name and I am 0 years old
+my name is Bob and I am 12 years old
+ARF ARF
+tikcer is BYTING!!!!
+pi@raspberrypi:~/visualStudio $
+
