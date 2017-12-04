@@ -1,1 +1,2 @@
 trsting cron
+test 2 crontab edited in pi user
