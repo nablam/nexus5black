@@ -1,3 +1,5 @@
 trsting cron
 test 2 crontab edited in pi user
 https://unix.stackexchange.com/questions/46235/how-does-reverse-ssh-tunneling-work
+still have not looked at above link
+
