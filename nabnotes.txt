@@ -8,3 +8,11 @@ run appwiz.cpl
 
 root icons
 %SystemRoot%\System32\SHELL32.dll
+
+
+
+$ git branch -d feature/login
+ (use -D instead to force deleting the branch without checking merged status)
+
+delete remote
+$ git push origin --delete feature/login
