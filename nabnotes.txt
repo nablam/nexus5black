@@ -1,3 +1,5 @@
+don t forget i have sudo bash , su, and tsu {termux su}
+
 trsting cron
 test 2 crontab edited in pi user
 https://unix.stackexchange.com/questions/46235/how-does-reverse-ssh-tunneling-work
@@ -16,3 +18,13 @@ $ git branch -d feature/login
 
 delete remote
 $ git push origin --delete feature/login
+
+gpg
+https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-encrypt-and-sign-messages-on-an-ubuntu-12-04-vps
+nabil lamribenn@gm doldoltAgekkethunathunahatha
+encrypt
+gpg --encrypt --sign --armor -r person@email.com name_of_file
+decrypt
+gpg filename
+
+
