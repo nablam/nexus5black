@@ -1,3 +1,4 @@
+git and nano use tsu
 don t forget i have sudo bash , su, and tsu {termux su}
 
 trsting cron
